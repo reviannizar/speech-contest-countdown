@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+<meta charset="utf-8">
+<title>Display Countdown</title>
+<meta name="generator" content="Bootply" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+<link href="libs/css/app.min.css" rel="stylesheet">
+<script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script type='text/javascript' src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script type='text/javascript' src="//cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.1.0/jquery.countdown.min.js"></script>
+<script type='text/javascript' src="/socket.io/socket.io.js"></script>
+<script type='text/javascript' src="libs/js/app.main.js"></script>
+<script type='text/javascript' src="libs/js/socket.io.js"></script>
+<script type='text/javascript' src="libs/js/app.index.js"></script>
+<style>
+html, body{background-color:#000}
+.count-text {font-size:4000%; color:#fff; line-height:85%; text-align:center;width:100%;}
+</style>
+</head>
+<body>
+<div id="main">
+<div class="count-text" onclick="launchFullscreen(document.documentElement)"><span id="count"></span></div>
+<div style="width:100%;"><center>
+	<img id="lampu-hijau" src="libs/img/lampu-hijau.png" height="300px"/>
+	<img id="lampu-kuning" src="libs/img/lampu-kuning.png" height="300px"/>
+	<img id="lampu-merah" src="libs/img/lampu-merah.png" height="300px"/>
+</center></div>
+</div>
+<script type='text/javascript'>
+$(function(){
+	var count=new Date(new Date().valueOf()+waktu*60*1000);
+	$('#count').countdown(count, function(event) { 
+		$(this).html(event.strftime('%M:%S')); 
+	}).countdown('pause');
+	$('#main').hide();
+});
+</script>
+</body>
+</html>

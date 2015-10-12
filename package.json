@@ -1,0 +1,17 @@
+{
+  "name": "speech-contest-countdown",
+  "version": "0.0.1",
+  "description": "Application for speech contest use socket.io",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/revian/speech-contest-countdown.git"
+  },
+  "dependencies": {
+    "express": "4.10.2",
+    "socket.io": "1.2.0"
+  }
+}
